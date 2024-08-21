@@ -1,7 +1,7 @@
 
-# Dogecoin Arcade Project
+# Bellscoin Arcade Project
 
-This project involves a comprehensive system for managing and interacting with Dogecoin ordinals, including tools for collection management, content handling, and blockchain interaction. Below is a detailed overview of the project structure and components.
+This project involves a comprehensive system for managing and interacting with Bellscoin ordinals, including tools for collection management, content handling, and blockchain interaction. Below is a detailed overview of the project structure and components.
 
 ## Project Structure
 
@@ -42,7 +42,7 @@ The `indexes` folder contains an index text file for each ordinal. The name of e
 
 ### jsonTools
 
-The `jsonTools` folder contains a program that processes a `DM.json` file and outputs a Dogecoin Arcade collection JSON.
+The `jsonTools` folder contains a program that processes a `DM.json` file and outputs a Bellscoin Arcade collection JSON.
 
 ---
 
@@ -60,7 +60,7 @@ The `static` folder contains non-doginal content files.
 
 ### templates
 
-The `templates` folder contains non-doginal HTML files and JavaScript code for Dogecoin Arcade.
+The `templates` folder contains non-doginal HTML files and JavaScript code for Bellscoin Arcade.
 
 ---
 
@@ -76,7 +76,7 @@ This script sends an ordinal using `sendOrd` with the defined receiving wallet, 
 
 ---
 
-### DogecoinArcade.py
+### BellscoinArcade.py
 
 This script is a Flask server that serves the content of the ordinals. It either retrieves the content from the `content` folder or calls `getOrd` and then displays it from the `content` folder.
 
@@ -102,7 +102,7 @@ This script deletes all index files below a specified size threshold.
 
 ### favicon.ico
 
-This file is the favicon for the Dogecoin Arcade website, displayed in the browser tab.
+This file is the favicon for the Bellscoin Arcade website, displayed in the browser tab.
 
 ---
 
