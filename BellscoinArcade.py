@@ -1,5 +1,5 @@
-from flask import Flask, abort, render_template, render_template_string, send_file, request, jsonify
 import os
+from flask import Flask, abort, render_template, render_template_string, send_file, request, jsonify
 from threading import Lock, local
 from concurrent.futures import ThreadPoolExecutor
 import re
@@ -8,6 +8,11 @@ from getOrdContent import process_tx
 from bitcoinrpc.authproxy import JSONRPCException
 
 app = Flask(__name__)
+
+# Ensure content directory exists
+content_dir = './content'
+if not os.path.exists(content_dir):
+    os.makedirs(content_dir)
 
 # Queue to manage tasks
 task_queue = queue.Queue()
@@ -59,7 +64,6 @@ def serve_content(file_id):
             return jsonify({"message": "Server is busy processing ordinal. Please try again later."}), 503
 
     filename = f"{file_id}"
-    content_dir = './content'
     file_path = next((os.path.join(content_dir, file) for file in os.listdir(content_dir) if file.startswith(filename)), None)
     
     if file_path and os.path.isfile(file_path):
